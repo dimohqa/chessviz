@@ -55,3 +55,22 @@ char** movePawn(char **v, int* pozition) {
     return v;
 }
 
+int board_func(char *one_place, char *two_place) {
+    int pozition[4];
+    pozition[0] = one_place[0] - 96; //a
+    pozition[1] = 9 - (one_place[1] - 48) - 1; //2
+    pozition[2] = two_place[0] - 96; //c
+    pozition[3] = 9 - (two_place[1] - 48) - 1; //8
+    printf("\n ");
+
+    for(int g = 0; g < 4; g++) {
+        if (pozition[g] < 0 || pozition[g] > 9) {
+            return -1;
+        }
+    }
+
+    arr = movePawn(arr, pozition);
+    print_board(arr);
+    return 0;
+}
+
