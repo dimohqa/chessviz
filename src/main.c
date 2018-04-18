@@ -27,7 +27,11 @@ int main() {
                             printf("\t  ERROR COORDINATES!\n");
                             exit = 0;
                         }
+                    }
                 }
+            } else  if  (q == 'q') {
+                system ("clear");
+                return 0;
             }
     }
     return 0;
