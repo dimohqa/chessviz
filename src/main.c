@@ -15,13 +15,13 @@ int main() {
                 while (exit == 0) {
                     char arr1[4], arr2[4];
                     printf("Write coordinates or (r) to Restart:\n" );
-                    scanf("%s %s", one_place, two_place);
+                    scanf("%s %s", arr1, arr2);
                     if (arr1[0] == 'r') {
                         system("clear");
                         exit = 1;
                         main();
                     } else {
-                        exit = board_func(one_place, two_place);
+                        exit = board_func(arr1, arr2);
                         if (exit == -1) {
                             print_new_board();
                             printf("\t  ERROR COORDINATES!\n");
@@ -29,7 +29,7 @@ int main() {
                         }
                     }
                 }
-            } else  if  (q == 'q') {
+            } else  if  (status == 'q') {
                 system ("clear");
                 return 0;
             }

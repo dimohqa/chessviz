@@ -1,7 +1,9 @@
-void print_new_board() {
-    arr = board();
-    print_board(arr);
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "board.h"
+
+char **arr;
 
 char **board() {
     arr = (char**) malloc(9 *sizeof(char*));
@@ -32,6 +34,11 @@ char **board() {
         arr[6][i] = p - 32;
     }
     return arr;
+}
+
+void  print_new_board() {
+    arr = board();
+    print_board(arr);
 }
 
 void print_board(char **arr) {
