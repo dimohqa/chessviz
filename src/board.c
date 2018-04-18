@@ -43,3 +43,15 @@ void print_board(char **arr) {
         printf("\n");
     }
 }
+
+char** movePawn(char **v, int* pozition) {
+    if (pozition[0] == pozition[2]) {
+        int poz = arr[pozition[1]][pozition[0]];
+        arr[pozition[1]][pozition[0]] = arr[pozition[3]][pozition[2]];
+        arr[pozition[3]][pozition[2]] = poz;
+    } else {
+        printf("Next try");
+    }
+    return v;
+}
+
