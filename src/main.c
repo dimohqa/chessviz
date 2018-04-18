@@ -20,7 +20,13 @@ int main() {
                         system("clear");
                         exit = 1;
                         main();
-                    }
+                    } else {
+                        exit = board_func(one_place, two_place);
+                        if (exit == -1) {
+                            print_new_board();
+                            printf("\t  ERROR COORDINATES!\n");
+                            exit = 0;
+                        }
                 }
             }
     }
