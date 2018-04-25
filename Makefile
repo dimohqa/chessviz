@@ -1,4 +1,4 @@
-flags = -g3 -O0 -Wall -Werror
+flags = -Wall -Werror -std=c99
 
 ./bin/board : ./build/main.o ./build/board.o bin
 	gcc $(flags) -o ./bin/board ./build/main.o ./build/board.o -lm
