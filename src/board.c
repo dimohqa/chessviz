@@ -19,8 +19,8 @@ char **board() {
     char g1[] = {'r','n','b','q','k','b','n','r'};
     char p = 'p';
     
-    for (i = 0;i < 9; i++) {
-        arr[8][i] = 56 + i;
+    for (i = 0;i < 8; i++) {
+        arr[i][0] = 56 - i;
     }
     
     for (i = 0;i < 9; i++) {
