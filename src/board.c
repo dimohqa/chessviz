@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include "board.h"
 #include "move_fig.h"
@@ -17,7 +18,7 @@ char **board() {
         }
     }
     
-    char g1[] = {'r','n','b','q','k','b','n','r'};
+    char g1[] = {'r','h','e','q','k','e','h','r'};
     char p = 'p';
     
     for (i = 0;i < 8; i++) {
@@ -36,6 +37,7 @@ void  print_new_board() {
 
 void print_board(char **arr) {
     system("clear");
+    printf("\n");
     for (int i = 0;i < 8; i++) {
         printf("\t %d", 8 - i);
         for (int j = 0;j < 8; j++) {
@@ -67,7 +69,7 @@ int board_func(char *places, int test) {
         return -1;
     }
     int pozition[4];
-    pozition[0] = places[0] - 96; //a
+    pozition[0] = places[0] - 96 - 1; //a
     pozition[1] = 9 - (places[1] - 48) - 1; //2
     pozition[2] = places[3] - 96 - 1; //c
     pozition[3] = 9 - (places[4] - 48) - 1; //8
