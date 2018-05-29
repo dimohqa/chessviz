@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "board.h"
+#include "move_fig.h"
 
 char **arr;
 
