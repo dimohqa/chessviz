@@ -3,36 +3,35 @@
 #include "board.h"
 
 int main() {
-    int k = 0;
+    system("clear");
+    int k = 0,exit;
+    char places[6];
     while ( k == 0) {
         char status;
         printf("\t(s) Start or (q) Quit\n");
         scanf("%c", &status);
-        print_new_board();
-            if (status == 's') {
-                k = -1;
-                int exit = 0;
-                while (exit == 0) {
-                    char arr1[4], arr2[4];
-                    printf("Write coordinates or (r) to Restart:\n" );
-                    scanf("%s %s", arr1, arr2);
-                    if (arr1[0] == 'r') {
-                        system("clear");
-                        exit = 1;
-                        main();
-                    } else {
-                        exit = board_func(arr1, arr2);
-                        if (exit == -1) {
-                            print_new_board();
-                            printf("\t  ERROR COORDINATES!\n");
-                            exit = 0;
-                        }
+        if (status == 's') {
+            system("clear");
+            print_new_board();
+            while (exit == 0) {
+                printf("Write coordinates or (q) to Quit:\n" );
+                scanf("%s", places);
+                if (places[0] == 'q') {
+                    system("clear");
+                    return 0;
+                } else {
+                    exit = board_func(places, 0);
+                    if (exit == -1) {
+                        print_new_board();
+                        printf("\t  ERROR COORDINATES!\n");
+                        exit = 0;
                     }
                 }
-            } else  if  (status == 'q') {
-                system ("clear");
-                return 0;
             }
+        } else  if  (status == 'q') {
+            system ("clear");
+            return 0;
+        }
     }
     return 0;
 }
